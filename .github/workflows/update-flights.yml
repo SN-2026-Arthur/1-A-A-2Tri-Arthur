@@ -22,9 +22,6 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests supabase
 
-      - name: Injetar variaveis no painel HTML
-        run: sed -i "s|%%SUPABASE_ANON_KEY%%|${{ secrets.SUPABASE_SERVICE_KEY }}|g" index.html
-
       - name: Buscar SIROS e inserir no Supabase
         run: python scripts/fetch_flights.py
         env:
