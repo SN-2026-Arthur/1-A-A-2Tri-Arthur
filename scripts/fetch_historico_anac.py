@@ -17,8 +17,6 @@ import csv
 import io
 import os
 import sys
-import locale
-import calendar
 from datetime import datetime, timezone, timedelta
 
 import requests
@@ -59,10 +57,14 @@ ano, mes = ano_mes.split("-")
 print(f"Período histórico: {ano_mes}")
 print(f"Aeroportos filtrados: {', '.join(AIRPORTS)}")
 
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
-meses = [calendar.month_name[i] for i in range(1, 13)]
-nome_mes = meses[int(mes) - 1].capitalize()  
-mes_sem_zero = str(int(mes))  
+MESES = {
+    "01": "Janeiro", "02": "Fevereiro", "03": "Março",
+    "04": "Abril",   "05": "Maio",      "06": "Junho",
+    "07": "Julho",   "08": "Agosto",    "09": "Setembro",
+    "10": "Outubro", "11": "Novembro",  "12": "Dezembro",
+}
+nome_mes     = MESES[mes]
+mes_sem_zero = str(int(mes))
 
 # ── URL do VRA ────────────────────────────────────────────────────────────────
 # Formato do portal ANAC:
