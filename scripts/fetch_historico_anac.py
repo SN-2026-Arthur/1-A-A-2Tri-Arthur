@@ -62,6 +62,7 @@ print(f"Aeroportos filtrados: {', '.join(AIRPORTS)}")
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 meses = [calendar.month_name[i] for i in range(1, 13)]
 nome_mes = meses[int(mes) - 1].capitalize()  
+mes_sem_zero = str(int(mes))  
 
 # ── URL do VRA ────────────────────────────────────────────────────────────────
 # Formato do portal ANAC:
@@ -69,7 +70,7 @@ nome_mes = meses[int(mes) - 1].capitalize()
 VRA_URL = (
     f"https://sistemas.anac.gov.br/dadosabertos/"
     f"Voos%20e%20opera%C3%A7%C3%B5es%20a%C3%A9reas/Voo%20Regular%20Ativo%20%28VRA%29/"
-    f"{ano}/{mes}%20-%20{nome_mes}.csv"
+    f"{ano}/{mes}%20-%20{nome_mes}/VRA_{ano}{mes_sem_zero}.csv"
 )
 
 # URL alternativa (portal de dados abertos)
