@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  /*Página de teste*/
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,6 +59,11 @@
     input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(.6); }
     .btn { background: transparent; color: var(--accent); border-color: var(--accent);
            align-self: flex-end; white-space: nowrap; transition: background .15s; }
+
+
+
+
+    
     .btn:hover { background: rgba(56,189,248,.1); }
     .btn:disabled { opacity: .4; cursor: default; }
     .divider { width: 1px; height: 36px; background: var(--border); align-self: flex-end; }
@@ -143,15 +149,17 @@
 </head>
 <body>
 
+  <!-- ⚠️ CONFIGURAÇÃO — Substitua pelos valores do seu projeto Supabase -->
   <script>
-    const SUPABASE_URL      = "SUPABASE_URL";
-    const SUPABASE_ANON_KEY = "SUPABASE_ANON_KEY";
+    const SUPABASE_URL      = "https://pwuxdowztkpikoefliey.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_R-0np1sYvsNRGfUo-NROng_oJinGZNc";
     const PER_PAGE          = 50;
   </script>
 
   <header>
     <div class="header-left">
-      <h1 id="airport-name">Painel de Voos — SN-2026</h1>
+      <h1 id="airport-name">Painel de Voos — SN-2026</h1>      
+      <h1 id="airport-update">Atualização dia 17/09/2026</h1>
       <p id="airport-subtitle">Selecione um aeroporto abaixo</p>
     </div>
     <div class="header-right">
